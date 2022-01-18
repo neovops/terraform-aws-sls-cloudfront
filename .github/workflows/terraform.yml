@@ -18,3 +18,11 @@ jobs:
       - name: Terraform Format
         id: fmt
         run: terraform fmt -recursive -check
+
+      - name: Terraform Example Common Init
+        id: init
+        run: cd examples/common && terraform init
+
+      - name: Terraform Example Common Validate
+        id: validate
+        run: cd examples/common && terraform validate
