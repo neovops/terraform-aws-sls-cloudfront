@@ -1,0 +1,26 @@
+name: "Documentation"
+
+on: [push]
+
+jobs:
+  documentation:
+    name: "Documentation"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate Documentation
+        id: documentation
+        # Temporary use of main:
+        # https://github.com/terraform-docs/gh-actions/issues/73
+        # uses: terraform-docs/gh-actions@v0.11.0
+        uses: terraform-docs/gh-actions@main
+        with:
+          config-file: .terraform-docs.yml
+          output-file: README.md
+
+      - name: Check up-to-date
+        env:
+          NUM_CHANGED: ${{ steps.documentation.outputs.num_changed }}
+        run: 'if [ "$NUM_CHANGED" -eq 0 ]; then echo "Documentation up-to-date"; else echo "You must update documentation"; git diff --cached; exit 1; fi'
