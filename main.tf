@@ -28,7 +28,7 @@
  * }
  *
  * module "dev" {
- *   source = "../../"
+ *   source = "neovops/sls-cloudfront/aws"
  *
  *   sls_service_name = "api"
  *   sls_stage        = "dev"
@@ -42,7 +42,7 @@
  * }
  *
  * module "prod" {
- *   source = "../../"
+ *   source = "neovops/sls-cloudfront/aws"
  *
  *   sls_service_name = "api"
  *   sls_stage        = "prod"
