@@ -8,6 +8,7 @@ module "dev" {
   domain_names = ["api-dev.example.com"]
 
   providers = {
+    aws.route53   = aws
     aws.us-east-1 = aws.us-east-1
   }
 }
@@ -23,6 +24,7 @@ module "prod" {
   domain_names = ["api.example.com"]
 
   providers = {
+    aws.route53   = aws
     aws.us-east-1 = aws.us-east-1
   }
 }
