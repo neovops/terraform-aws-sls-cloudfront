@@ -65,6 +65,8 @@ data "aws_cloudformation_stack" "sls" {
 
 data "aws_route53_zone" "zone" {
   name = var.zone_name
+
+  provider = aws.route53
 }
 
 resource "aws_cloudfront_distribution" "distribution" {
