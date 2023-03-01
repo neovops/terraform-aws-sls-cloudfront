@@ -17,3 +17,9 @@ variable "domain_names" {
   type        = list(string)
   description = "Domain names"
 }
+
+variable "web_acl_id" {
+  type        = string
+  description = "Unique identifier that specifies the AWS WAF web ACL"
+  default     = ""
+}

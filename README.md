@@ -96,6 +96,7 @@ No modules.
 | <a name="input_domain_names"></a> [domain\_names](#input\_domain\_names) | Domain names | `list(string)` | n/a | yes |
 | <a name="input_sls_service_name"></a> [sls\_service\_name](#input\_sls\_service\_name) | Serverless Framework service name | `string` | n/a | yes |
 | <a name="input_sls_stage"></a> [sls\_stage](#input\_sls\_stage) | Serverless Framework stage | `string` | n/a | yes |
+| <a name="input_web_acl_id"></a> [web\_acl\_id](#input\_web\_acl\_id) | Unique identifier that specifies the AWS WAF web ACL | `string` | `""` | no |
 | <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | Route53 zone name. It must already exists. | `string` | n/a | yes |
 
 ## Outputs

@@ -84,6 +84,8 @@ resource "aws_cloudfront_distribution" "distribution" {
 
   enabled = true
 
+  web_acl_id = var.web_acl_id == "" ? null : var.web_acl_id
+
   default_cache_behavior {
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
